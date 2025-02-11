@@ -1,0 +1,36 @@
+ls: Lista os arquivos no diretório
+man: utilizado para abrir o 'manual' do programa
+clear: limpa a tela do terminal
+mkdir: cria um diretório
+cd: muda de diretório
+whoami: retorna o usuário que está logado
+pwd: retorna o diretório atual
+Redirecionadores: escreve o output do programa utilizado em outro arquivo
+criar pasta nome composto: usando '' (aspas) conseguimos criar pasta com nome composto
+touch: criar arquivo 
+nano: editor de texto
+cat: ler documentos
+mv: mover arquivo ou renomear
+cp: copiar arquivo
+find: procura pelo arquivo
+head & tail: mostra a parte inicial (head), e a parte final do arquivo (tail)
+less: carrega o arquivo em partes
+rm: remove arquivo
+rmdir: remove diretorio se ele estiver vazio
+rm -rf: remove arquivo/diretorio no modo bruto
+hostname: retorna nome da maquina
+hostname -i: retorna ip
+ip a: mostra todas as interfaces de ip
+grep: filtra a pesquisa
+ping: envia o ping para algum servidor
+free-h % free-m: monitora os recursos utilizados do computador (-h para mostrar de forma humana , e -m mostra de forma mais num perspectiva de maquina.
+top: monitor do sistema
+htop: também monitora o sistema de forma mais enfeitada
+ps: mostra os processos na instancia do terminal
+ps aux: mostra de todos os processos
+kill: mata (fecha) o processo
+df -h: mostra o quanto de espaço no computador
+ncdu: escaneia o disco e mostra onde estão os arquivos
+uname: mostra informações do kernel
+lscpu % lsusb: mostra informações da cpu (lscpu), e lsusb mostra informações dos usbs 
+history: mostra o histórico dos comandos utilizados no terminal
