@@ -1,0 +1,15 @@
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/bin/Debug/net9.0/ConsoleApp
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/bin/Debug/net9.0/ConsoleApp.deps.json
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/bin/Debug/net9.0/ConsoleApp.runtimeconfig.json
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/bin/Debug/net9.0/ConsoleApp.dll
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/bin/Debug/net9.0/ConsoleApp.pdb
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ConsoleApp.AssemblyInfoInputs.cache
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ConsoleApp.AssemblyInfo.cs
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ConsoleApp.csproj.CoreCompileInputs.cache
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ConsoleApp.sourcelink.json
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ConsoleApp.dll
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/refint/ConsoleApp.dll
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ConsoleApp.pdb
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ConsoleApp.genruntimeconfig.cache
+/home/nathan/SEII-NathaBernardesCampos/Semana02/Exercicio04/ConsoleApp/obj/Debug/net9.0/ref/ConsoleApp.dll
