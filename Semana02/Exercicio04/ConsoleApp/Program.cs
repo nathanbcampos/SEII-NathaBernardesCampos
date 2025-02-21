@@ -1,11 +1,10 @@
-﻿string billGates = "sai fora BILL GATES!";
-int numberOfBillGates = 1;
-string name = "Nathan";
-var myaccount = 19600000000000;
-var charchar = 'c';
+﻿//Create REad Update Delete
+//CRUD
+//Create
 
-Console.WriteLine(billGates);
-Console.WriteLine(numberOfBillGates);
-Console.WriteLine(name);
-Console.WriteLine(myaccount);
-Console.WriteLine(charchar);
+string petFish = "puffer fish";
+
+//Concatenation
+petFish = "porcupine " + petFish;
+
+Console.Write(petFish);
