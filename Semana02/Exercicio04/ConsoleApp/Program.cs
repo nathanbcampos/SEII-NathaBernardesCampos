@@ -1,3 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-Console.WriteLine("Ola Mundo!");
+﻿string billGates = "sai fora BILL GATES!";
+int numberOfBillGates = 1;
+
+Console.WriteLine(billGates);
+Console.WriteLine(numberOfBillGates);
