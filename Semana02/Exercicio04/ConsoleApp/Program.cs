@@ -1,15 +1,25 @@
-﻿
+﻿/*var janta = "peixe";*/
+/**/
+/*switch (janta){*/
+/*	case "peixe":*/
+/*		Console.WriteLine("peixe");*/
+/*		break;*/
+/*	case "frango":*/
+/*		Console.WriteLine("frango");*/
+/*		break;*/
+/*	default:*/
+/*		Console.WriteLine("Nao jantou");*/
+/*	break;*/
+/*}*/
+/**/
 
+var janta = "peixe";
 
-var status = Warning.CodeYellow;
-
-if (status == Warning.CodeYellow)
+var result = janta switch
 {
-	Console.WriteLine("CODE YELLOW");
-}
+	"torta de frango" => "torta de frango",
+	"peixe" => "peixe",
+	_ => "Não tem janta"
+};
 
-enum Warning{
-	CodeRed,
-	CodeBlue,
-	CodeYellow
-}
+Console.WriteLine("A janta é " + result);
