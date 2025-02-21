@@ -1,29 +1,18 @@
-﻿using System.Text;
-
-//Create REad Update Delete
-//CRUD
+﻿//Array CRUD
+//
 //Create
-
-string petFish = "puffer fish";
-
-//Concatenation
-petFish = "porcupine " + petFish;
-
-//Template Literal
-/*Console.WriteLine($"I AM BUYING {petFish}. YOU CANNOT STOP ME!!!");*/
-
-/*Console.WriteLine(petFish);*/
+string[] favoriteRats = ["fancy rat", "brown rat", "radioactive rat", "wolf rat"];
 
 //Read
-//Console.Writeline()
 
 //Update
-string newPetFish = petFish.Replace("porcupine", "bluer dot");
-Console.WriteLine(newPetFish);
+/*favoriteRats[0] = "Fancy Rat"; */
+// LINQ - "update array linq"
 
-//DELETE
-StringBuilder newCrustacen = new StringBuilder();
-newCrustacen.Append("fiddler crab");
-Console.WriteLine(newCrustacen);
-newCrustacen.Remove(0, 8);
-Console.WriteLine(newCrustacen);
+
+var newFavorieRats = favoriteRats.Where((e) => e.StartsWith("b"));
+
+foreach(var rat in newFavorieRats)
+{
+	Console.WriteLine(rat);
+};
