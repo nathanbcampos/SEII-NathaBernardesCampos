@@ -1,25 +1,14 @@
-﻿/*var janta = "peixe";*/
-/**/
-/*switch (janta){*/
-/*	case "peixe":*/
-/*		Console.WriteLine("peixe");*/
-/*		break;*/
-/*	case "frango":*/
-/*		Console.WriteLine("frango");*/
-/*		break;*/
-/*	default:*/
-/*		Console.WriteLine("Nao jantou");*/
-/*	break;*/
-/*}*/
-/**/
+﻿//Pinger
 
-var janta = "peixe";
+using System.Net.NetworkInformation;
 
-var result = janta switch
+Ping p1 = new Ping();
+PingReply PR = p1.Send("8.8.8.8");
+
+while(PR.Status.ToString() == "Success")
 {
-	"torta de frango" => "torta de frango",
-	"peixe" => "peixe",
-	_ => "Não tem janta"
-};
-
-Console.WriteLine("A janta é " + result);
+	Console.WriteLine(PR.Status.ToString() + "!");
+	PR = p1.Send("8.8.8.8");
+	Console.WriteLine("Waiting ten seconds for next request");
+	Thread.Sleep(10000);
+}
