@@ -1,18 +1,20 @@
-﻿//Array CRUD
+﻿//Counter
 //
-//Create
-string[] favoriteRats = ["fancy rat", "brown rat", "radioactive rat", "wolf rat"];
+/*for(var i = 0; i < 7; i++){*/
+/*	Console.WriteLine(i);*/
+/*}*/
 
-//Read
+string[] professores = ["Alberto", "Carlos", "Roberto"];
 
-//Update
-/*favoriteRats[0] = "Fancy Rat"; */
-// LINQ - "update array linq"
+/*for(var i = 0; i < nomes.Length; i++){*/
+/*	Console.WriteLine(nomes[i]);*/
+/*}*/
 
 
-var newFavorieRats = favoriteRats.Where((e) => e.StartsWith("b"));
+foreach(var aulas in professores){
+	Console.WriteLine(aulas);
+}
 
-foreach(var rat in newFavorieRats)
-{
-	Console.WriteLine(rat);
-};
+professores.ToList().ForEach((i) => {
+	Console.WriteLine("ForEach: " + i);
+});
