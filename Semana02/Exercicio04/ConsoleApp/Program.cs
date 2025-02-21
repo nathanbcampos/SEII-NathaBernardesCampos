@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 //Create REad Update Delete
 //CRUD
@@ -22,7 +21,7 @@ petFish = "porcupine " + petFish;
 string newPetFish = petFish.Replace("porcupine", "bluer dot");
 Console.WriteLine(newPetFish);
 
-//DELETE 
+//DELETE
 StringBuilder newCrustacen = new StringBuilder();
 newCrustacen.Append("fiddler crab");
 Console.WriteLine(newCrustacen);
