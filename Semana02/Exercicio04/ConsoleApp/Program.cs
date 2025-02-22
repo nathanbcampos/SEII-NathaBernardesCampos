@@ -1,12 +1,7 @@
-﻿/*int? value = null;*/
-string? value2 = null;
+﻿using ConsoleApp;
 
-/*Console.WriteLine("value: " + value);*/
+RealState elmStreet = new("Elm Street");
+Console.WriteLine(elmStreet.Address);
+elmStreet.Address = "Main Street";
+Console.WriteLine(elmStreet.Address);
 
-if ( value2 is not null)
-{
-	Console.WriteLine("value2 : " + value2?.Length);
-}
-
-Console.WriteLine(value2 ?? "No Value!");
-Console.WriteLine(value2 is not null ? "Has value!" : "No value");
