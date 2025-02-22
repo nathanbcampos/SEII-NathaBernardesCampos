@@ -1,10 +1,18 @@
-﻿using ConsoleApp;
+﻿var values = ("t", 2, "p");
 
-RealState elmStreet = new()
+Console.WriteLine(values.Item1);
+Console.WriteLine(values.Item2);
+Console.WriteLine(values.Item3);
+
+var valuesWithNmae = (First: "t", Second: 20, Third: "p");
+Console.WriteLine(valuesWithNmae.Second);
+
+
+(int a, string b, bool c) ReturnTheseValues()
 {
-	Address = "Elm Street",
-	SquareFootage = 1300,
-	Price = 300000
-};
+	return (9, "u", true);
+}
 
-Console.WriteLine(elmStreet.CalculatePricePerSquareFoot()); 
+var tupleReturnValue = ReturnTheseValues();
+
+Console.WriteLine(tupleReturnValue.a);
