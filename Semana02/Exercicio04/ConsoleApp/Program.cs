@@ -1,18 +1,12 @@
-﻿var values = ("t", 2, "p");
+﻿/*int? value = null;*/
+string? value2 = null;
 
-Console.WriteLine(values.Item1);
-Console.WriteLine(values.Item2);
-Console.WriteLine(values.Item3);
+/*Console.WriteLine("value: " + value);*/
 
-var valuesWithNmae = (First: "t", Second: 20, Third: "p");
-Console.WriteLine(valuesWithNmae.Second);
-
-
-(int a, string b, bool c) ReturnTheseValues()
+if ( value2 is not null)
 {
-	return (9, "u", true);
+	Console.WriteLine("value2 : " + value2?.Length);
 }
 
-var tupleReturnValue = ReturnTheseValues();
-
-Console.WriteLine(tupleReturnValue.a);
+Console.WriteLine(value2 ?? "No Value!");
+Console.WriteLine(value2 is not null ? "Has value!" : "No value");

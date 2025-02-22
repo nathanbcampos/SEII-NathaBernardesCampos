@@ -7,7 +7,7 @@ namespace ConsoleApp
 {
     public class RealState
     {
-	public string Address { get; set; }
+	public string? Address { get; set; }
 	public int Price { get; set; }
 	public int SquareFootage { get; set; }
 	public int CalculatePricePerSquareFoot() => Price / SquareFootage;
