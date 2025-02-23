@@ -1,25 +1,21 @@
-﻿//CRUD
-//Create
-List<int> numNums = [1, 2, 3, 4, 5];
+﻿
+Person person1 = new("Marco", "Silva", 30, new string[1]  {"9022-3842"});
+Person person2 = new("Marco", "Silva", 30, new string[1]  {"9022-3842"});
+/*Person person2 = new("Pedro", "Oliveira", 23,new string[1]  {"3234-4234"});*/
 
-//READ
-/*foreach(var num in numNums)*/
-/*{*/
-/*    Console.WriteLine(num);*/
-/*}*/
+//Immutability 
+/*person1.LastName = "silva";*/
+/*person2.PhoneNumber[0] = "0000-4230";*/
 
-//Update
-numNums.Add(6);
+//Equality
+//value
+//Referential
+Console.WriteLine(person1 == person2);
 
-//Insert
-numNums.Insert(0,0);
+//Non-destructive (copy)
+Person person3 = person2 with {LastName = "Brewski"};
+Console.WriteLine(person3.ToString());
 
-//Delete
-/*var newNum = numNums.Where((i) => i != 2);*/
-/*numNums.Remove(3);*/
-numNums.RemoveAt(0);
-foreach(var num in numNums)
-{
-    Console.WriteLine(num);
-}
+public record Person(string FirstName, string LastName, int Age, string[] PhoneNumber);
+
 
