@@ -7,22 +7,18 @@ namespace ConsoleApp
 {
     public class Solution
     {
-	public int[] TwoSum(int[] nums, int target)
+	public bool ContainsDuplicate(int[] nums)
 	{
-	    Dictionary<int, int> dict = new();
+	    HashSet<int> set = new();
 	    for(int i = 0; i < nums.Length; i++)
 	    {
-		int complement = target - nums[i];
-		if(dict.ContainsKey(complement))
+		if(set.Contains(nums[i]))
 		{
-		    return new int[] { dict[complement], i};
+		    return true;
 		}
-		if(!dict.ContainsKey(nums[i]))
-		{
-		    dict.Add(nums[i],i);
-		}
+		set.Add(nums[i]);
 	    }
-	    throw new ArgumentException("No solution");
+	    return false;
 	}
     }
 }

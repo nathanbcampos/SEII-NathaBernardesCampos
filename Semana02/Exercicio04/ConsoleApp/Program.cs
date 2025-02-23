@@ -1,20 +1,4 @@
-﻿Action loggerAction = () =>
-{
-    Console.WriteLine("This is simple");
-};
+﻿using ConsoleApp;
 
-Func<int, int> loggerFunc = (int x) => 
-{
-    return x+2;
-};
-
-Console.WriteLine(loggerFunc(3));
-
-var list = Enumerable.Range(1,10).Select(i => i*3).ToList();
-
-var callCall = (Action func) =>
-{
-    func();
-};
-
-callCall(loggerAction);
+Solution sol = new();
+Console.WriteLine(sol.ContainsDuplicate(new int[] {1,2,3,4,5,1,6,7,8,9}));
