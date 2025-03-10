@@ -1,0 +1,7 @@
+Resumo.
+
+O video fala sobre BIG O notation, uma forma de classificar quanto a função doalgorítmo é escalável, que é basicamente a complexidade do algoritmo, determinando assim o comportamento do código, ou seja, a performance em cada um do caso. Assim, é possível determinar de forma sistematica, qual é a melhor abordagem para a performance do código.
+Podendo ser classificados da seguinte forma :
+O(1)- Constant : são funções que independente da quantidade de valores de entrada passados, a performance do tempo de resposta se manterá a mesma;
+O(N) - Linear : são caracterizados por realizar uma interação com cada valor passado na entrada. Assim, a quantidade de operações será correspondente ao número de valores informados;
+O(N²) - Quadrática : além de interagir com cada elemento de entrada, irá realizar uma sub interação, então para cada elemento o número de interações e o tempo de execução aumentará de maneira quadrática. Em caso, de um número muito grande de entrada de dados, tornando o algoritmo com baixa performance.
