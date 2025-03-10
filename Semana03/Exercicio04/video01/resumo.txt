@@ -1,0 +1,5 @@
+Resumo Data Structures and Algorithms In c#: Intro & abstract data types
+
+O vídeo apresenta uma introdução aos conceitos fundamentais de Estruturas de Dados e Algoritmos utilizando a linguagem C#. Em sua abordagem, o conteúdo enfatiza o conceito de Tipos de Dados Abstratos (ADTs), explicando que eles são definições teóricas que especificam um conjunto de valores e as operações que podem ser realizadas sobre esses valores, sem detalhar a forma como são implementados. Essa separação entre a interface (o que o usuário pode fazer com o dado) e a implementação (como o dado é armazenado e manipulado internamente) permite criar programas mais modulares, reutilizáveis e fáceis de manter.
+O vídeo fala sobre os tipos de dados: listas, pilhas e filas. No vídeo, também é mostrado como funciona o dado abstrado em c#, basicamente criando um tipo de dado abstrato (" genérico" ), onde se armazenar ou criar diversos objetos que contenha os dados pré estabelecidos. No exemplo do vídeo ele cria a classe pokemon, e um pokemon novo 'squirtle' onde tem os dados 'name' (string) , 'Exp' (int) e 'IsPokemon'(booleano).
+

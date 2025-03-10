@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AlgorithmDataStructure;
 
-pokemon squirtle = new pokemon();
+Pokemon squirtle = new Pokemon();
 squirtle.name = "Squirtle";
 
 Console.WriteLine(squirtle.name);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgorithmDataStructure
 {
-	public class pokemon
+	public class Pokemon
 	{
 		public string? name { get; set;}
 		public int Exp {get ; set; }
