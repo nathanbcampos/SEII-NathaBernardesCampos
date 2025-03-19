@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("video06")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("video07")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28090e57daaaf84f2ca261020e6a688a117bfc6b")]
-[assembly: System.Reflection.AssemblyProductAttribute("video06")]
-[assembly: System.Reflection.AssemblyTitleAttribute("video06")]
+[assembly: System.Reflection.AssemblyProductAttribute("video07")]
+[assembly: System.Reflection.AssemblyTitleAttribute("video07")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
