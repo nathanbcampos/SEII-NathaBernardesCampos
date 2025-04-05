@@ -12,8 +12,10 @@
                 Padding="10"/>
 
             <Button 
+                x:Name="BTNOla"
                 Text="Olá"
-                 HorizontalOptions="Center"/>
+                HorizontalOptions="Center"
+                Clicked="BTNOla_Clicked"/>
         </VerticalStackLayout>
     </ScrollView>
 

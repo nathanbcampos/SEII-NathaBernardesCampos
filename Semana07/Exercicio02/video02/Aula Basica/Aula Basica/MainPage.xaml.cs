@@ -8,7 +8,10 @@
             InitializeComponent();
         }
 
-       
+        private void BTNOla_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Aviso", "Olá Mundo!", "OK");
+        }
     }
 
 }
