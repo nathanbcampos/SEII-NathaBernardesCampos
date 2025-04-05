@@ -8,9 +8,12 @@
             <Label 
                 Text="Este é meu primeiro app" 
                 FontSize="Header" 
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center"
+                Padding="10"/>
 
-            <Button Text="Olá"/>
+            <Button 
+                Text="Olá"
+                 HorizontalOptions="Center"/>
         </VerticalStackLayout>
     </ScrollView>
 
