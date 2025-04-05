@@ -27,16 +27,18 @@
     </ContentPage>
 
     <ContentPage
-        Title="Grid"
+        Title="Video"
         IconImageSource="dotnet_bot.png">
         <ScrollView>
             
             <VerticalStackLayout Margin="20">
-                <Label 
-                 Text="Página de grid" 
-                 FontSize="Header" 
-                 HorizontalOptions="Center"
-                 Padding="10"/>
+                <WebView 
+                    x:Name="WVVideo"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Scale="0.75"
+                    WidthRequest="500"
+                    HeightRequest="280"/>
             </VerticalStackLayout>
             
         </ScrollView>
