@@ -2,15 +2,17 @@
 {
     public partial class MainPage : ContentPage
     {
+        string nome;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void BTNOla_Clicked(object sender, EventArgs e)
+        private async void BTNOla_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Aviso", "Olá Mundo!", "OK");
+            nome = await DisplayPromptAsync("Nome", "Digite seu nome:", "OK");
+            await DisplayAlert("Aviso", "Ola " + nome, "OK");
         }
     }
 
