@@ -1,6 +1,6 @@
 ﻿namespace Aula_Basica
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         string nome;
 
