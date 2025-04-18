@@ -1,0 +1,5 @@
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.GeneratedMSBuildEditorConfig.editorconfig
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.AssemblyInfoInputs.cache
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.AssemblyInfo.cs
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.csproj.CoreCompileInputs.cache
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.sourcelink.json
