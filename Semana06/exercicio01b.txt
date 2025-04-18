@@ -1,0 +1,29 @@
+1) Limite de bytes a serem enviados por pacotes TCP e UDP
+
+- UDP: o protocolo UDP transporta datagramas cuja carga útil máxima depende do limite do cabeçalho IP e do cabeçalho UDP. Em IPv4, o tamanho total do datagrama está limitado a 65.535 bytes (incluindo cabeçalhos). Subtraindo 20 bytes do cabeçalho IP e 8 bytes do cabeçalho UDP, a carga útil máxima teórica é de 65.507 bytes. Na prática, porém, o tamanho é limitado pelo MTU (Maximum Transmission Unit) da rede (por exemplo, 1.500 bytes em Ethernet), resultando em cargas úteis típicas de até cerca de 1.472 bytes antes de ocorrer fragmentação.
+
+- TCP: o TCP não impõe um limite rígido de tamanho de segmento na especificação; porém, o IP ainda impõe o mesmo limite de 65.535 bytes por datagrama. Na prática, o TCP negocia um MSS (Maximum Segment Size) durante o handshake, que corresponde ao MTU da rede menos o tamanho dos cabeçalhos IP (20 bytes) e TCP (20 bytes). Em Ethernet com MTU de 1.500 bytes, o MSS normalmente é 1.460 bytes.
+
+2) Transmissão de um arquivo grande pela Internet
+
+Para enviar um arquivo maior que o limite de um único pacote, o arquivo é dividido em múltiplos segmentos (ou datagramas) compatíveis com o tamanho máximo negociado (MSS ou payload UDP). Cada segmento é encapsulado em um pacote IP e enviado pela rede. No destino, os segmentos são recebidos e remontados para reconstruir o arquivo original.
+
+- No caso do TCP, essa fragmentação e remontagem são transparentes ao usuário. O TCP cuida de:
+  • fragmentar o fluxo de bytes em segmentos de tamanho adequado (MSS)
+  • numerar os segmentos (números de sequência)
+  • confirmar (ACK) o recebimento e retransmitir segmentos perdidos
+  • controlar fluxo e congestionamento
+
+- No caso do UDP, não há controle interno de fragmentação lógica além da fragmentação IP, nem confiabilidade. Se o payload exceder o MSS/IP e for fragmentado, a remontagem depende do IP; pacotes perdidos não são retransmitidos automaticamente. Aplicações devem implementar seus próprios mecanismos de divisão, reenvio e remontagem, se desejarem garantir a entrega completa.
+
+Diferença entre implementações TCP e UDP para este problema
+
+- Confiabilidade: TCP garante entrega ordenada e livre de erros; UDP não garante nem ordem nem entrega. Arquivos grandes via TCP são enviados de forma confiável sem intervenção do desenvolvedor da aplicação, enquanto em UDP seria necessário implementar lógica adicional.
+
+- Controle de fluxo e congestionamento: TCP ajusta dinamicamente a taxa de envio conforme a capacidade da rede; UDP envia na velocidade que a aplicação definir, o que pode causar perda se exceder a capacidade.
+
+- Complexidade de implementação: usar TCP para transferência de arquivos reduz a complexidade, pois cabe ao próprio protocolo cuidar de fragmentação, retransmissão e controle de congestionamento. Com UDP, a aplicação deve gerenciar fragmentação lógica, detecção de pacotes perdidos, retransmissões e ordenação.
+
+- Overhead: UDP tem menor overhead de cabeçalhos e não faz handshake, o que pode trazer maior desempenho em cenários onde perda de alguns pacotes é tolerável (streaming de vídeo, voz). Mas para envio de arquivos inteiros, TCP é preferível pela confiabilidade intrínseca.
+
+
