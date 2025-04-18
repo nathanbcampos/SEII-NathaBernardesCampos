@@ -3,3 +3,13 @@
 /home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.AssemblyInfo.cs
 /home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.csproj.CoreCompileInputs.cache
 /home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.sourcelink.json
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/bin/Debug/net9.0/Exercicio02
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/bin/Debug/net9.0/Exercicio02.deps.json
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/bin/Debug/net9.0/Exercicio02.runtimeconfig.json
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/bin/Debug/net9.0/Exercicio02.dll
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/bin/Debug/net9.0/Exercicio02.pdb
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.dll
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/refint/Exercicio02.dll
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.pdb
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/Exercicio02.genruntimeconfig.cache
+/home/nathan/SEII-NathaBernardesCampos/Semana06/Exercicio02/video01/obj/Debug/net9.0/ref/Exercicio02.dll

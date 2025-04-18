@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Tasks;
 using System.Timers;
 
 namespace Csharp_Keywords
@@ -14,16 +17,16 @@ namespace Csharp_Keywords
 					var hostName = Dns.GetHostName();
 					IPHostEntry ipHost = Dns.GetHostEntry(hostName);
 					Console.WriteLine($"Host: {hostName}");
-					IPAddress ip = ipHost AddressList[0];
+					IPAddress ip = ipHost.AddressList[0];
 					IPEndPoint remoteEp = new IPEndPoint(ip, 453323);
 
-					Socket sender = new Socket(ip.AddressFamily, SocketType.Strem, protocolType.Tcp);
+					Socket sender = new Socket(ip.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 					try
 					{
 						sender.Connect(remoteEp);
 						Console.WriteLine("socket connected");
-						sender.RemoteEntPoint.ToString();
-						bytes[] msg = Encoding.ASCII.GetBytes("This is just a test");
+						sender.RemoteEndPoint.ToString();
+						byte[] msg = Encoding.ASCII.GetBytes("This is just a test");
 						int byteSent = sender.Send(msg);
 						int byteRec = sender.Receive(bytes); 
 						Console.WriteLine($"Echoed test {Encoding.ASCII.GetString(bytes, 0, byteRec)}");
