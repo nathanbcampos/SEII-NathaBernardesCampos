@@ -1,0 +1,7 @@
+/home/nathan/WebSocketCarro/bin/Release/net9.0/publish/WebSocketCarro
+/home/nathan/WebSocketCarro/bin/Release/net9.0/publish/appsettings.Development.json
+/home/nathan/WebSocketCarro/bin/Release/net9.0/publish/appsettings.json
+/home/nathan/WebSocketCarro/bin/Release/net9.0/publish/WebSocketCarro.dll
+/home/nathan/WebSocketCarro/bin/Release/net9.0/publish/WebSocketCarro.deps.json
+/home/nathan/WebSocketCarro/bin/Release/net9.0/publish/WebSocketCarro.runtimeconfig.json
+/home/nathan/WebSocketCarro/bin/Release/net9.0/publish/WebSocketCarro.pdb
