@@ -1,24 +1,36 @@
 using System.Net.WebSockets;
 using System.Text;
+using System.Collections.Concurrent;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.WebHost.UseUrls("http://0.0.0.0:5000");
 var app = builder.Build();
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
 app.UseWebSockets();
 
+// Lista de clientes WebSocket conectados
+var webSockets = new ConcurrentBag<WebSocket>();
+
 app.Map("/ws", async context =>
 {
-    if (context.WebSockets.IsWebSocketRequest)
+    if (!context.WebSockets.IsWebSocketRequest)
     {
-        using var webSocket = await context.WebSockets.AcceptWebSocketAsync();
-        Console.WriteLine("Cliente conectado via WebSocket.");
+        context.Response.StatusCode = 400;
+        return;
+    }
 
-        var buffer = new byte[1024 * 4];
-        WebSocketReceiveResult result;
-        
+    using var webSocket = await context.WebSockets.AcceptWebSocketAsync();
+    Console.WriteLine("Cliente conectado via WebSocket.");
+    webSockets.Add(webSocket);
+
+    var buffer = new byte[1024 * 1024 * 5]; // até 5 MB
+    WebSocketReceiveResult result;
+
+    try
+    {
         while (true)
         {
             result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
@@ -29,26 +41,51 @@ app.Map("/ws", async context =>
                 await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "", CancellationToken.None);
                 break;
             }
-            else if (result.MessageType == WebSocketMessageType.Text)
+
+            if (result.MessageType == WebSocketMessageType.Text)
             {
-                var mensagemRecebida = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                var texto = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                Console.WriteLine($"Dado Texto Recebido: {texto}");
 
-                Console.WriteLine($"Dado Recebido, Direção : {mensagemRecebida}");
+                // reenvia como mensagem de texto a todos
+                foreach (var sock in webSockets)
+                {
+                    if (sock.State == WebSocketState.Open)
+                    {
+                        var bytes = Encoding.UTF8.GetBytes($"Mensagem recebida: {texto}");
+                        await sock.SendAsync(bytes, WebSocketMessageType.Text, true, CancellationToken.None);
+                    }
+                }
+            }
+            else if (result.MessageType == WebSocketMessageType.Binary)
+            {
+                // Recebe um blob de bytes da imagem
+                var imagemBytes = new byte[result.Count];
+                Array.Copy(buffer, imagemBytes, result.Count);
+                Console.WriteLine($"Imagem Recebida, {imagemBytes.Length} bytes");
 
-                var resposta = $"Servidor recebeu: {mensagemRecebida}";
-                var respostaBytes = Encoding.UTF8.GetBytes(resposta);
-                await webSocket.SendAsync(
-                    new ArraySegment<byte>(respostaBytes, 0, respostaBytes.Length),
-                    WebSocketMessageType.Text,
-                    true,
-                    CancellationToken.None
-                );
+                // Converte para Base64 e empacota como data URI
+                var b64 = Convert.ToBase64String(imagemBytes);
+                var dataUri = "data:image/png;base64," + b64;
+
+                // Envia de volta como texto contendo o data URI
+                var uriBytes = Encoding.UTF8.GetBytes(dataUri);
+                foreach (var sock in webSockets)
+                {
+                    if (sock.State == WebSocketState.Open)
+                        await sock.SendAsync(uriBytes, WebSocketMessageType.Text, true, CancellationToken.None);
+                }
             }
         }
     }
-    else
+    catch (Exception ex)
     {
-        context.Response.StatusCode = 400;
+        Console.WriteLine($"Erro na conexão WebSocket: {ex.Message}");
+    }
+    finally
+    {
+        // Remove a conexão que fechou
+        webSockets = new ConcurrentBag<WebSocket>(webSockets.Where(ws => ws != webSocket));
     }
 });
 

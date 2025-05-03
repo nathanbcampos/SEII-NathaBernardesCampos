@@ -1,33 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta charset='utf-8' />
-    <title>Controle do Carrinho</title>
-    <link href="css/entireframework.min.css" rel="stylesheet" type="text/css">
-    <link href="css/custom.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8" />
+  <title>Controle e Stream do Carrinho</title>
+  <link href="css/entireframework.min.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+  <style>
+    body { font-family: Arial, margin: 1rem; }
+    .controls { margin-bottom: 1rem; }
+    .controls button { margin-right: .5rem; }
+    video, img { 
+      display: block; 
+      max-width: 320px; 
+      border: 1px solid #666; 
+      margin-bottom: 1rem; 
+    }
+    #streamImg { width: 320px; height: 240px; object-fit: cover; }
+  </style>
 </head>
 <body>
-    <h1>Controle do Carrinho via WebSocket</h1>
-    <p>Use os botões abaixo para enviar direção ao servidor:</p>
-    
-    <div class="container">
-        <div class="parent">
-            <div class="set blue">
-                <nav class="o-pad">
-                    <a class="up control" data-direction="up"></a>
-                    <a class="right control" data-direction="right"></a>
-                    <a class="down control" data-direction="down"></a>
-                    <a class="left control" data-direction="left"></a>
-                </nav>
-            </div>
-        </div>
-    </div>
+  <h1>Controle do Carrinho e Live Stream</h1>
 
-    <script src="js/custom.js"></script>
+  <!-- 1) BOTÕES DE DIREÇÃO -->
+  <div class="controls">
+    <h2>Direção</h2>
+    <button onclick="enviarDirecao('cima')">↑ Cima</button>
+    <button onclick="enviarDirecao('baixo')">↓ Baixo</button>
+    <button onclick="enviarDirecao('esquerda')">← Esquerda</button>
+    <button onclick="enviarDirecao('direita')">→ Direita</button>
+  </div>
+
+  <!-- 2) D-PAD ESTILIZADO -->
+  <div class="container">
+    <div class="parent">
+      <div class="set blue">
+        <nav class="o-pad">
+          <a class="up control"    data-direction="up"></a>
+          <a class="right control" data-direction="right"></a>
+          <a class="down control"  data-direction="down"></a>
+          <a class="left control"  data-direction="left"></a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 3) STREAM DA CÂMERA -->
+  <h2>Live Cam Stream</h2>
+  <video id="localVideo" autoplay playsinline muted></video>
+  <button id="startStream">Iniciar Transmissão</button>
+  <button id="stopStream">Parar Transmissão</button>
+  <img id="streamImg" src="" alt="Stream aparecerá aqui" />
+
+  <canvas id="captureCanvas" width="320" height="240" style="display:none;"></canvas>
+
+  <script src="js/custom.js"></script>
 </body>
 </html>
-
-
-
-
-
